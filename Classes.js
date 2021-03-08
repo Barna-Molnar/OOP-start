@@ -17,13 +17,18 @@ class PersonCl {
             this.birthYear = birthYear;
 
         }
-        // Methods will be added to .prototype property but it has to be out of the constructor()
+        // Methods will be added to .prototype property and it has to be out of the constructor() 'insrance method
     calcAge() {
         console.log(2021 - this.birthYear)
     }
     greet() {
-        console.log(`Hey ${this.firstName}`)
+            console.log(`Hey ${this.firstName}`)
+        }
+        // creating static mehtod 
+    static helo() {
+        console.log("helo there 😎")
     }
+
 }
 
 const jessica = new PersonCl("Jessica", 1996);

@@ -1,14 +1,18 @@
 'use strict'
 const Person = function(firstName, birthYear) {
-    // Instance properties 
-    this.firstName = firstName;
-    this.birthYear = birthYear;
+        // Instance properties 
+        this.firstName = firstName;
+        this.birthYear = birthYear;
 
-    // Never do this  
-    // this.calcAge = function() {
-    //     console.log(2037 - this.birthYear)
-    // };
+        // Never do this  
+        // this.calcAge = function() {
+        //     console.log(2037 - this.birthYear)
+        // };
 
+    }
+    // Creating static method to the Person constuctor function , it is not available on any other instances 
+Person.helo = function() {
+    console.log("Helo there 😎")
 }
 
 const barni = new Person("Barni", 1990);
