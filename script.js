@@ -79,3 +79,62 @@ Account.helper()
 
 acc1.deposit(500).deposit(400).withdraw(150).requestLoan(30000).withdraw(1000);
 console.log(acc1.getMovements())
+
+// Practice #4
+
+class CarCl {
+    constructor(make, speed) {
+        this.make = make;
+        this.speed = speed;
+    }
+    accelerate() {
+        this.speed = (10 + this.speed)
+        console.log(`${this.speed}km\\h`)
+    }
+    breake() {
+        this.speed = (this.speed - 5)
+        console.log(`${this.make} is going with ${this.speed}km\\h`)
+        return this;
+    }
+    get speedUS() {
+        return `The ${this.make} is going with ${this.speed / 1.6} mi/h`
+    }
+
+    set speedUS(num) {
+        this.speed = num * 1.6
+
+
+    }
+}
+
+class EVCL extends CarCl {
+
+    // #charge
+    constructor(make, speed, charge) {
+        super(make, speed)
+        this.charge = charge;
+        // this.#charge = charge;
+    }
+    accelerate() {
+        this.speed += 20;
+        this.charge--;
+        console.log(
+            `${this.make} is going at ${this.speed} km/h with a charge of ${this.charge}%`
+        );
+        return this;
+    };
+    chargeBattery(chargeTo) {
+        this.charge = chargeTo;
+        return this;
+    };
+}
+
+const rivian = new EVCL("Rivian", 120, 23)
+console.log(rivian)
+rivian.breake()
+rivian.accelerate()
+rivian.chargeBattery(80);
+console.log(rivian)
+rivian.breake().accelerate().accelerate().breake().breake().chargeBattery(100)
+console.log(rivian)
+console.log(rivian.speedUS)
