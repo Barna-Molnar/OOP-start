@@ -72,28 +72,3 @@ console.log(arr.unique())
 
 const h1 = document.querySelector("h1");
 // console.dir(x => x + 1)
-
-// Practicing
-
-const Car = function(make, speed) {
-    this.make = make;
-    this.speed = speed
-}
-Car.prototype.accelerate = function() {
-    this.speed = (10 + this.speed)
-    console.log(`${this.speed}km\\h`)
-}
-
-Car.prototype.breake = function() {
-    this.speed = (this.speed - 5)
-    console.log(`${this.speed}km\\h`)
-}
-const bmw = new Car("BMW", 120)
-const mercedes = new Car("Mercedes", 95)
-bmw.accelerate()
-bmw.accelerate()
-bmw.breake()
-
-console.log(mercedes.speed)
-mercedes.accelerate()
-mercedes.breake()

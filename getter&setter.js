@@ -39,10 +39,26 @@ class PersonCl {
         else alert(`${name} is not a full name `)
     }
     get fullName() {
-        return this._fullName
+            return this._fullName
+        }
+        // creating static mehtod 
+    static helo() {
+        console.log("helo there 😎")
     }
 }
 const jessica = new PersonCl("Jessica Davis", 1995)
 console.log(jessica.age)
 
 const walter = new PersonCl('Walter White', 1999);
+
+// Object.create Practising
+
+const PersonProto = {
+    calcAge() {
+        console.log(2021 - this.birthYear)
+    },
+    init(firstName, birthYear) {
+        this.firstName = firstName;
+        this.birthYear = birthYear;
+    }
+};
